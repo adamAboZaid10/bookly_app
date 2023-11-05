@@ -8,7 +8,10 @@ class ListViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: double.infinity,
+      height: 120,
       child: ListView.builder(
+          itemCount: 20,
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {

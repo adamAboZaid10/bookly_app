@@ -45,7 +45,6 @@ class BestSellerListViewItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: const Text(

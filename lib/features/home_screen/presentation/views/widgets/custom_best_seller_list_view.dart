@@ -11,7 +11,7 @@ class BestSellerListView extends StatelessWidget {
       padding: EdgeInsets.zero,
 
       //بتاخد الطول بتاع الwidget بتاعتك
-      // shrinkWrap: true,
+      shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 20,
       itemBuilder: (context, index) => const BestSellerListViewItem(),
