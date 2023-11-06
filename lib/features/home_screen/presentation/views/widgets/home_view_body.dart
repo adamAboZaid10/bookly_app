@@ -8,7 +8,7 @@ import 'custom_list_view_widget.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
       child: Column(
