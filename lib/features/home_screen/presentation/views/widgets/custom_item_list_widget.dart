@@ -13,7 +13,7 @@ class CustomItemListViewWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(18),
           child: AspectRatio(
             //           width  / height
-            aspectRatio: 3 / 5,
+            aspectRatio: 2.6 / 4,
             child: CachedNetworkImage(fit: BoxFit.fill,imageUrl: url,)
           ),
         ),
