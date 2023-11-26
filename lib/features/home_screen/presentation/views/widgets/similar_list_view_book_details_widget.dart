@@ -13,7 +13,7 @@ class SimilarListViewBookDetailsWidget extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const CustomItemListViewWidget();
+            return const CustomItemListViewWidget(url: 'https://img.freepik.com/premium-photo/vintage-film-reel-bobin-clapperboard-background-cinema-design_753134-369.jpg?w=1060',);
           }),
     );
   }

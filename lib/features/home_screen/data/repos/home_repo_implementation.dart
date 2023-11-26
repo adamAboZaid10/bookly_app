@@ -5,32 +5,34 @@ import 'package:bookly_app/features/home_screen/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class HomeRepoImpl implements HomeRepo {
+class HomeRepoImpl implements HomeRepo{
+
   final ApiService apiService;
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<Book>>> fetchNewestBooks() async {
-    try {
-      var data = await apiService.get(
-          endPoint:
-              'volumes?Fultering=free-ebooks&Sorting=newest&q=subject:Programming');
+  Future<Either<Failure, List<Book>>> fetchNewestBooks() async{
+   try{
+    var data =
+     await apiService.get(
+      endPoint: 'volumes?Fultering=free-ebooks&Sorting=newest&q=subject:programming');
 
-      List<Book> books = [];
-
-      for (var item in data['items']) {
+      List<Book> books =[];
+      
+      for(var item in data['items']){
         books.add(Book.fromJson(item));
       }
       return Right(books);
-    } catch (e) {
-      if (e is DioError) {
-        return left(ServerFailure.fromDioError(e));
-      }
-      return left(
-        ServerFailure(e.toString()),
-      );
+   }catch(e){
+
+    if(e is DioException){
+      return left(ServerFailure.fromDioError(e));
     }
+    return Left(ServerFailure(e.toString()));
+  
+   }
   }
 
+  
   @override
   Future<Either<Failure, List<Book>>> fetchFeaturedBooks() async {
     try {
@@ -44,7 +46,7 @@ class HomeRepoImpl implements HomeRepo {
       }
       return Right(books);
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
       return left(

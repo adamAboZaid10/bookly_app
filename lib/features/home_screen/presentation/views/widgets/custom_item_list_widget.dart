@@ -1,26 +1,20 @@
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomItemListViewWidget extends StatelessWidget {
-  const CustomItemListViewWidget({Key? key}) : super(key: key);
+  const CustomItemListViewWidget({Key? key,required this.url}) : super(key: key);
+  final String url;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        AspectRatio(
-          //           width  / height
-          aspectRatio: 2.7 / 4,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: const DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  AssetsData.test,
-                ),
-              ),
-            ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: AspectRatio(
+            //           width  / height
+            aspectRatio: 3 / 5,
+            child: CachedNetworkImage(fit: BoxFit.fill,imageUrl: url,)
           ),
         ),
         const SizedBox(

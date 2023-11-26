@@ -17,7 +17,7 @@ class BookDetailsSection extends StatelessWidget {
         const CustomBookDetailsAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .19),
-          child: const SizedBox(height: 270, child: CustomItemListViewWidget()),
+          child: const SizedBox(height: 270, child: CustomItemListViewWidget(url: 'https://img.freepik.com/premium-photo/vintage-film-reel-bobin-clapperboard-background-cinema-design_753134-369.jpg?w=1060',)),
         ),
         const SizedBox(
           height: 43,
@@ -40,7 +40,7 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        BookRating(
+        const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(

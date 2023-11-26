@@ -8,6 +8,7 @@ import '../../features/spalsh_screen/presentation/views/splash_view.dart';
 abstract class AppRouter {
   static const kDetailsView = '/detailsView';
   static const kSearchView = '/searchView';
+   static const kHomeView = '/homeView';
   static final router = GoRouter(
     routes: [
       GoRoute(
